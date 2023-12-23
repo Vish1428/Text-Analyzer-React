@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
-// import About from './Components/About';
+import About from './Components/About';
 import Alert from './Components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 
 function App() {
@@ -40,18 +40,18 @@ function App() {
   return (
     <>
     {/* <Navbar title = "TextAnalyzer" aboutText="About Us"/> */}
-    {/* <Router> */}
+    <Router>
       <Navbar title = "TextAnalyzer" mode={mode} toggleMode={toggleMode}/>
       <Alert alert = {alert}/>
       <div className="container my-3" >  
-      {/* <Routes> */}
-          {/* <Route exact path="/about" element={<About/>}></Route>
-          <Route exact path="/" element= */}
-          {<TextForm showAlert ={showAlert} heading= "Enter the text to analyze below" mode= {mode}/>}
-          {/* </Route> */}
-      {/* </Routes> */}
+      <Routes>
+          <Route exact path="/about" element={<About mode={mode}/>}></Route>
+          <Route exact path="/" element=
+          {<TextForm showAlert ={showAlert} heading= "Try Text Analyzer - Word counter, Character counter, Speak text, Remove Extra Space" mode= {mode}/>}>
+          </Route> 
+      </Routes>
       </div>
-    {/* </Router> */}
+    </Router>
     </>
   );
 }
